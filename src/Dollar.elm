@@ -6,9 +6,9 @@ type Dollar
     = Dollar Int
 
 times : Int -> Dollar -> Dollar
-times multiplier (Dollar amount) =
-    Dollar <| multiplier * amount 
+times multiplier (Dollar dollar) =
+    Dollar <| multiplier * dollar 
 
 amount : Dollar -> Int
-amount (Dollar amount) =
+amount (Dollar dollar) =
     dollar
