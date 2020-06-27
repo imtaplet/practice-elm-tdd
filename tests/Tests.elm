@@ -48,5 +48,19 @@ all =
                             Dollar 5 |> Money.plus (Franc 10)
                     in
                     amount |> Expect.equal (Dollar 10)
+            , test "Multiplication 2" <|
+                \_ ->
+                    let
+                        amount =
+                            Dollar 10 |> Money.plus (Franc 10)
+                    in
+                    amount |> Expect.equal (Dollar 15)
+            , test "round" <|
+                \_ ->
+                    let
+                        amount =
+                            Dollar 10 |> Money.plus (Franc 5)
+                    in
+                    amount |> Expect.equal (Dollar 13)
             ]
         ]
