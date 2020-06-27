@@ -6,7 +6,7 @@ type alias Amount =
 
 
 type Franc
-    = Franc Int
+    = Franc Amount
 
 
 times : Int -> Franc -> Franc
@@ -14,6 +14,6 @@ times multiplier (Franc franc) =
     Franc <| multiplier * franc
 
 
-amount : Franc -> Int
+amount : Franc -> Amount
 amount (Franc franc) =
     franc

@@ -6,7 +6,7 @@ type alias Amount =
 
 
 type Dollar
-    = Dollar Int
+    = Dollar Amount
 
 
 times : Int -> Dollar -> Dollar
@@ -14,6 +14,6 @@ times multiplier (Dollar dollar) =
     Dollar <| multiplier * dollar
 
 
-amount : Dollar -> Int
+amount : Dollar -> Amount
 amount (Dollar dollar) =
     dollar
