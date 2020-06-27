@@ -40,4 +40,13 @@ all =
                     in
                     fifteen |> Expect.equal (Franc 15)
             ]
+        , describe "Multicurrency"
+            [ test "Multiplication 1" <|
+                \_ ->
+                    let
+                        amount =
+                            Dollar 5 |> Money.plus (Franc 10)
+                    in
+                    amount |> Expect.equal (Dollar 10)
+            ]
         ]
