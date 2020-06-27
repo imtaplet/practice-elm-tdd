@@ -1,7 +1,7 @@
 module Tests exposing (..)
 
-import Expect
 import Money exposing (..)
+import Expect
 import Test exposing (..)
 
 
