@@ -1,6 +1,7 @@
 module Tests exposing (..)
 
 import Expect
+import Fuzz exposing (int)
 import Money exposing (..)
 import Test exposing (..)
 
@@ -23,6 +24,13 @@ all =
                             Dollar 5 |> Money.times 3
                     in
                     fifteen |> Expect.equal (Dollar 15)
+            , fuzz2 int int "plus dollar" <|
+                \left right ->
+                    let
+                        amount =
+                            Dollar left |> Money.plus (Dollar right)
+                    in
+                    Debug.log "amount" amount |> Expect.equal (Dollar (left + right))
             ]
         , describe "Franc"
             [ test "Multiplication 1" <|
